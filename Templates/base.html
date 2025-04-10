@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style>
+        /* Use Frutiger if available; fallback to Helvetica Neue, Helvetica, Arial, sans-serif */
+        body {
+            font-family: "Frutiger", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        nav a:hover {
+            background: rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+        nav a.active {
+            background: #007bff;
+            color: #fff;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('w2') }}" class="{{ 'active' if active_tab=='w2' else '' }}">W-2</a>
+            <a href="{{ url_for('int_form_view') }}" class="{{ 'active' if active_tab=='1099-int' else '' }}">1099-INT</a>
+            <a href="{{ url_for('div_form_view') }}" class="{{ 'active' if active_tab=='1099-div' else '' }}">1099-DIV</a>
+            <a href="{{ url_for('ssa_form_view') }}" class="{{ 'active' if active_tab=='1099-ssa' else '' }}">1099-SSA</a>
+            <a href="{{ url_for('r_form_view') }}" class="{{ 'active' if active_tab=='1099-r' else '' }}">1099-R</a>
+            <a href="{{ url_for('form_1040') }}" class="{{ 'active' if active_tab=='1040' else '' }}">1040</a>
+        </nav>
+    </header>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

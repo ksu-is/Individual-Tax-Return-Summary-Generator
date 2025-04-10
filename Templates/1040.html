@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>1040 Form</h1>
+<form method="POST" action="{{ url_for('submit_1040') }}">
+    <label for="1040_save_name">1040 Save Name:</label>
+    <input type="text" name="1040_save_name" id="1040_save_name" required><br>
+    
+    <h2>W-2 Data</h2>
+    {% if w2_record %}
+      <p>Loaded Record: {{ w2_record }}</p>
+      <input type="hidden" name="w2_save" value="{{ w2_record.save_name }}">
+    {% else %}
+      <label for="w2_save">Select W-2 Record:</label>
+      <select name="w2_save" id="w2_save" required>
+         <option value="">--Select--</option>
+         {% for option in w2_options %}
+         <option value="{{ option }}">{{ option }}</option>
+         {% endfor %}
+      </select><br>
+    {% endif %}
+    
+    <h2>1099-INT Data</h2>
+    {% if int_record %}
+      <p>Loaded Record: {{ int_record }}</p>
+      <input type="hidden" name="int_save" value="{{ int_record.save_name }}">
+    {% else %}
+      <label for="int_save">Select 1099-INT Record:</label>
+      <select name="int_save" id="int_save" required>
+         <option value="">--Select--</option>
+         {% for option in int_options %}
+         <option value="{{ option }}">{{ option }}</option>
+         {% endfor %}
+      </select><br>
+    {% endif %}
+    
+    <h2>1099-DIV Data</h2>
+    {% if div_record %}
+      <p>Loaded Record: {{ div_record }}</p>
+      <input type="hidden" name="div_save" value="{{ div_record.save_name }}">
+    {% else %}
+      <label for="div_save">Select 1099-DIV Record:</label>
+      <select name="div_save" id="div_save" required>
+         <option value="">--Select--</option>
+         {% for option in div_options %}
+         <option value="{{ option }}">{{ option }}</option>
+         {% endfor %}
+      </select><br>
+    {% endif %}
+    
+    <h2>1099-SSA Data</h2>
+    {% if ssa_record %}
+      <p>Loaded Record: {{ ssa_record }}</p>
+      <input type="hidden" name="ssa_save" value="{{ ssa_record.save_name }}">
+    {% else %}
+      <label for="ssa_save">Select 1099-SSA Record:</label>
+      <select name="ssa_save" id="ssa_save" required>
+         <option value="">--Select--</option>
+         {% for option in ssa_options %}
+         <option value="{{ option }}">{{ option }}</option>
+         {% endfor %}
+      </select><br>
+    {% endif %}
+    
+    <h2>1099-R Data</h2>
+    {% if r_record %}
+      <p>Loaded Record: {{ r_record }}</p>
+      <input type="hidden" name="r_save" value="{{ r_record.save_name }}">
+    {% else %}
+      <label for="r_save">Select 1099-R Record:</label>
+      <select name="r_save" id="r_save" required>
+         <option value="">--Select--</option>
+         {% for option in r_options %}
+         <option value="{{ option }}">{{ option }}</option>
+         {% endfor %}
+      </select><br>
+    {% endif %}
+    
+    <h2>Calculated Fields</h2>
+    <p>
+       (Total Income and Total Federal Tax Withheld will be calculated upon saving the 1040 record.)
+    </p>
+    
+    <input type="submit" value="Save 1040">
+</form>
+{% endblock %}

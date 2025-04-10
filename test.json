@@ -1,0 +1,72 @@
+{
+  "w2": {
+    "BillyJoel_W2": {
+      "save_name": "BillyJoel_W2",
+      "employee_ssn": "999-9999-9999",
+      "employer_ein": "12-3456789",
+      "employer_name": "Billy Joel",
+      "employer_address": "123 Music Avenue",
+      "employee_name": "Billy Joel",
+      "employee_address": "456 Concert Blvd",
+      "wages": 54321,
+      "federal_tax": 4321,
+      "social_security_wages": 50000,
+      "social_security_tax": 3000,
+      "medicare_wages": 50000,
+      "medicare_tax": 1000,
+      "additional_information": "Test record for Billy Joel using W2 form."
+    }
+  },
+  "1099-int": {
+    "BillyJoel_1099_INT": {
+      "save_name": "BillyJoel_1099_INT",
+      "payer_name": "Billy Joel",
+      "payer_address": "123 Music Avenue",
+      "recipient_tin": "999-9999-9999",
+      "recipient_name": "Billy Joel",
+      "interest_income": 25000,
+      "federal_tax_withheld": 5000,
+      "additional_information": "Test record for Billy Joel using 1099-INT form."
+    }
+  },
+  "1099-div": {
+    "BillyJoel_1099_DIV": {
+      "save_name": "BillyJoel_1099_DIV",
+      "payer_name": "Billy Joel",
+      "payer_address": "123 Music Avenue",
+      "recipient_tin": "999-9999-9999",
+      "recipient_name": "Billy Joel",
+      "total_ordinary_dividends": 30000,
+      "qualified_dividends": 20000,
+      "total_capital_gain_distributions": 15000,
+      "federal_tax_withheld": 4000,
+      "additional_information": "Test record for Billy Joel using 1099-DIV form."
+    }
+  },
+  "1099-ssa": {
+    "BillyJoel_1099_SSA": {
+      "save_name": "BillyJoel_1099_SSA",
+      "payer_name": "Billy Joel",
+      "payer_address": "123 Music Avenue",
+      "recipient_ssn": "999-9999-9999",
+      "recipient_name": "Billy Joel",
+      "social_security_benefit": 35000,
+      "federal_tax_withheld": 4500,
+      "additional_information": "Test record for Billy Joel using 1099-SSA form."
+    }
+  },
+  "1099-r": {
+    "BillyJoel_1099_R": {
+      "save_name": "BillyJoel_1099_R",
+      "payer_name": "Billy Joel",
+      "payer_address": "123 Music Avenue",
+      "recipient_tin": "999-9999-9999",
+      "recipient_name": "Billy Joel",
+      "gross_distribution": 60000,
+      "taxable_amount": 55000,
+      "federal_tax_withheld": 6000,
+      "distribution_code": "D",
+      "additional_information": "Test record for Billy Joel using 1099-R form."
+    }
+  }
+}
